@@ -1,0 +1,41 @@
+# bytes/cachsed
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+
+#venv
+.venv/
+venv/
+
+# data
+*.csv
+*.jsonl
+*.tsv
+*.pkl
+*.npz
+*.npy
+
+# logs
+checkpoint/
+results/
+runs/
+saved_models/
+*.pt
+*.bin
+
+# tokenizers
+tokenizer_config.json
+special_tokens_map.json
+vocab.json
+merges.txt
+added_tokens.json
+
+# output
+*.log
+*.out
+
+# Jupyter metadata
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
