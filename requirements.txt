@@ -4,3 +4,4 @@ peft
 accelerate
 datasets
 scikit-learn
+adapter-transformers
