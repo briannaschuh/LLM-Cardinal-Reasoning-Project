@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
         if peft_available and os.path.exists("saved_models/lora_bert"): # evalaute lora
             peft_config = PeftConfig.from_pretrained("saved_models/lora_bert")
-            base_model = BertForSequenceClassification.from_pretrained(peft_config.base_model_name_or_path)
+            base_model = BertForSequenceClassification.from_pretrained(peft_config.base_model_name_or_path, num_labels=8)
             lora_model = PeftModel.from_pretrained(base_model, "saved_models/lora_bert")
             lora_tokenizer = AutoTokenizer.from_pretrained("saved_models/lora_bert")
             evaluate_model(lora_model, lora_tokenizer, name="LoRA Fine-Tuned BERT")
@@ -61,7 +61,9 @@ if __name__ == "__main__":
 
         if is_lora_model(model_path) and peft_available:
             peft_config = PeftConfig.from_pretrained(model_path)
-            base_model = BertForSequenceClassification.from_pretrained(peft_config.base_model_name_or_path)
+            base_model = BertForSequenceClassification.from_pretrained(
+                peft_config.base_model_name_or_path, num_labels=8
+            )
             model = PeftModel.from_pretrained(base_model, model_path)
             evaluate_model(model, tokenizer, name=f"LoRA Model @ {model_path}")
         else:
