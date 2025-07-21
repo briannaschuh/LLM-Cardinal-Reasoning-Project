@@ -65,7 +65,12 @@ if __name__ == "__main__":
             model = PeftModel.from_pretrained(base_model, model_path)
             evaluate_model(model, tokenizer, name=f"LoRA Model @ {model_path}")
         else:
-            model = BertForSequenceClassification.from_pretrained(model_path)
+            if model_path == "bert-base-uncased": # need to add randomly initalize the classes
+                print("Evaluating raw BERT base model with randomly initialized classification head.")
+                model = BertForSequenceClassification.from_pretrained(model_path, num_labels=8)
+            else:
+                model = BertForSequenceClassification.from_pretrained(model_path)
             evaluate_model(model, tokenizer, name=f"Model @ {model_path}")
+
     else:
         print("Please specify --all or --model_path")

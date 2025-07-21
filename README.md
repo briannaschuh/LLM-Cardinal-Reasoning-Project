@@ -3,7 +3,7 @@ Exploring how fine-tuning can help language models improve at directional reason
 
 > "If A is north of B and B is east of C, where is A relative to C?"
 
-We compare the base model vs full fine-tuning vs parameter-efficient fine-tuning (LoRA) on a synthetic directional QA dataset.
+I compared the base model vs full fine-tuning vs parameter-efficient fine-tuning (LoRA) on a synthetic directional QA dataset.
 
 ---
 

@@ -67,7 +67,7 @@ trainer = Trainer( # trainer
 
 trainer.train() #train
 
-output_dir = "saved_models/full_bert" # save the model
+output_dir = "saved_models/full_bert" # fine-tuning the full BERT
 os.makedirs(output_dir, exist_ok=True)
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)
