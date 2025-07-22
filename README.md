@@ -101,16 +101,16 @@ Each example followed the format:
 > Answer: SE (label 3)
 
 There were 8 direction classes:  
-N, NE, E, SE, S, SW, W, NW, which where mapped to class indices 0–7.
+N, NE, E, SE, S, SW, W, NW, which were mapped to class indices 0–7.
 
 
 ### Evaluation Results
 
 | Model                        | Accuracy | Macro F1 |
 |-----------------------------|----------|----------|
-| ❌ Baseline BERT (Untrained) | 11.5%    | 0.0568   |
-| ✅ LoRA Fine-Tuned BERT      | 92.85%   | 0.9223   |
-| ✅ Fully Fine-Tuned BERT     | 100.0% | 1.0000 |
+| Baseline BERT (Untrained) | 11.5%    | 0.0568   |
+| LoRA Fine-Tuned BERT      | 92.85%   | 0.9223   |
+| Fully Fine-Tuned BERT     | 100.0% | 1.0000 |
 
 ### Insights
 
@@ -132,12 +132,12 @@ At first glance, this may seem impressive. However, it may indicate overfitting 
 
 The results suggest that directional reasoning is not an emergent ability of pretrained LLMs but it can be learned with structured training. This supports findings from recent research that LLMs fail on spatial tasks unless explicitly fine-tuned.
 
---
+---
 
 ## Motivation
 This project was inspired by: 
 
-- [**Evaluating the Directional Reasoning of LLMs (Du et al., 2025)**](https://arxiv.org/abs/2507.12059)  
+[**Evaluating the Directional Reasoning of LLMs (Du et al., 2025)**](https://arxiv.org/abs/2507.12059)  
   *This paper benchmarked LLMs on multi-hop spatial reasoning and found that even strong models frequently fail on directional chains (e.g., confusing east/west or breaking reference frames). Inspired the core idea to fine-tune LLMs (like BERT) on synthetic directional QA data to overcome these reasoning failures* 
 
 --- 
